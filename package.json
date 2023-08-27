@@ -14,5 +14,8 @@
     "require-directory": "^2.1.1",
     "sequelize": "^6.32.1",
     "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
