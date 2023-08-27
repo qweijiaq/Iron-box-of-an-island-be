@@ -6,6 +6,7 @@ class InitManager {
   static initCore(app) {
     InitManager.app = app;
     InitManager.initLoadRoutes();
+    InitManager.loadHttpException();
   }
 
   // 自动注册路由
@@ -19,6 +20,12 @@ class InitManager {
     requireDirectory(module, apiDirectory, {
       visit: whenLoadModule,
     });
+  }
+
+  // 自动挂载所有的全局异常到全局对象上
+  static loadHttpException() {
+    const errors = require("./http-exception");
+    global.errs = errors;
   }
 }
 
